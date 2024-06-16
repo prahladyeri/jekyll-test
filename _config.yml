@@ -1,0 +1,30 @@
+# Dependencies
+#markdown: kramdown
+#highlighter:      pygments
+
+# Permalinks
+permalink:        /blog/:year/:month/:title.html
+#relative_permalinks: true
+
+# Setup
+title:            Prahlad Yeri
+tagline:          'Freelance Programmer and Writer'
+description:      'Freelance Programmer and Writer'
+url: https://prahladyeri.github.io
+baseurl: "/jekyll-test"
+
+author:
+  name:           'Prahlad Yeri'
+  url:            https://prahladyeri.github.io
+
+paginate:         10
+
+# Custom vars
+version: 2.1.4
+
+adsense: "ca-pub-0428291735937735"
+adsense_slot: "9729062115"
+#disqus: 'prahladyeri-blog'
+
+include:
+    - _pages
