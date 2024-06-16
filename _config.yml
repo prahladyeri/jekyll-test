@@ -3,7 +3,7 @@
 #highlighter:      pygments
 
 # Permalinks
-permalink:        blog/:year/:month/:title.html
+permalink:        /blog/:year/:month/:title.html
 #relative_permalinks: true
 
 # Setup
