@@ -8,7 +8,17 @@ title: Home
 	<!-- Blog post-->
 	<div class="col-lg-6">
 	<div class="card mb-4">
+	{% if post.image %}
+		<a href="{{site.baseurl}}{{post.url }}"><img class="card-img-top" src="{{site.baseurl}}{{post.image}}" alt="..." /></a>
+	{% else %}
+		{% assign content = post.content | markdownify %}
+		{% assign first_image = content | regex_find: '<img.+src=["\'](.*?)["\']' %}
+		{% if first_image %}
+		<a href="{{site.baseurl}}{{post.url }}"><img class="card-img-top" src="{{ first_image }}" alt="..." /></a>
+		{% else %}
 		<a href="{{site.baseurl}}{{post.url }}"><img class="card-img-top" src="{{site.baseurl}}/uploads/cover.jpg" alt="..." /></a>
+		{% endif %}
+	{% endif %}
 		<div class="card-body">
 			<div class="small text-muted">{{ post.date | date_to_string }}</div>
 			<h2 class="card-title h4">{{post.title}}</h2>

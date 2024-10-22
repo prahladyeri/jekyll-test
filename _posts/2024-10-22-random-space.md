@@ -2,6 +2,7 @@
 layout: post
 title: "The Future of Space Exploration: Beyond Earth"
 tags: webdev php codeigniter
+image: /uploads/mesh.jpg
 published: true
 ---
 
