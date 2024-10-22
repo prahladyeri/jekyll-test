@@ -64,7 +64,7 @@
 		</div>
 	</nav>
     <!-- include sidebar.html -->
-	<div class="container">
+	<div class="container mt-2">
 	<div class='row'>
 		<div class="col-lg-8">
 		{{ content }}
@@ -81,23 +81,21 @@
 					</div>
 				</div>
 			</div>
-			<!-- Categories widget-->
+			<!-- Tags widget-->
 			<div class="card mb-4">
 				<div class="card-header">Tags</div>
 				<div class="card-body">
 					<div class="row">
 						<div class="col-sm-6">
 							<ul class="list-unstyled mb-0">
-								<li><a href="#!">Web Design</a></li>
-								<li><a href="#!">HTML</a></li>
-								<li><a href="#!">Freebies</a></li>
-							</ul>
-						</div>
-						<div class="col-sm-6">
-							<ul class="list-unstyled mb-0">
-								<li><a href="#!">JavaScript</a></li>
-								<li><a href="#!">CSS</a></li>
-								<li><a href="#!">Tutorials</a></li>
+							{% assign tag_counts = site.tags | sort: 'last' %}
+							{% for tag in tag_counts %}
+								<li>
+									<a href="{{ site.baseurl }}/tag/{{ tag[0] }}">
+										{{ tag[0] }} ({{ tag[1].size }})
+									</a>
+								</li>
+							{% endfor %}							
 							</ul>
 						</div>
 					</div>
