@@ -15,7 +15,7 @@ layout: page
 	<hr>
 	Project: <a href="javascript:" class='name'></a><br>
 	Description: <label class='description'></label><br>
-	Stars: <label class='stars fas fa-star'></label><br>
+	Stars on Github: <label class='stars fas fa-star'></label><br>
 	Last commit: <label class='pushed_at'></label><br>
 </div>
 
