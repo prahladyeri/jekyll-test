@@ -90,11 +90,6 @@
 							<ul class="list-unstyled mb-0">
 							{% assign tag_counts = site.tags | sort: 'last' %}
 							{% for tag in tag_counts %}
-								<li>
-									<a href="{{ site.baseurl }}/tag/{{ tag[0] }}">
-										{{ tag[0] }} ({{ tag[1].size | append: "" }})
-									</a>
-								</li>
 							{% endfor %}							
 							</ul>
 						</div>
