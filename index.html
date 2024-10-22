@@ -11,15 +11,7 @@ title: Home
 	{% if post.image %}
 		<a href="{{site.baseurl}}{{post.url }}"><img class="card-img-top" src="{{site.baseurl}}{{post.image}}" alt="..." /></a>
 	{% else %}
-		{% assign content = post.content | markdownify %}
-    {% capture first_image %}
-        {{ content | regex_find: '<img.*src=[\'"](.*?)[\'"].*>' }}
-    {% endcapture %}		
-		{% if first_image %}
-		<a href="{{site.baseurl}}{{post.url }}"><img class="card-img-top" src="{{ first_image }}" alt="..." /></a>
-		{% else %}
 		<a href="{{site.baseurl}}{{post.url }}"><img class="card-img-top" src="{{site.baseurl}}/uploads/cover.jpg" alt="..." /></a>
-		{% endif %}
 	{% endif %}
 		<div class="card-body">
 			<div class="small text-muted">{{ post.date | date_to_string }}</div>
