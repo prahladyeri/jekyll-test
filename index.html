@@ -4,26 +4,26 @@ title: Home
 ---
 <!-- Nested row for non-featured blog posts-->
 <div class="row">
+	{% for post in paginator.posts %}
+	<!-- Blog post-->
 	<div class="col-lg-6">
-		{% for post in paginator.posts %}
-		<!-- Blog post-->
-		<div class="card mb-4">
-			<a href="{{site.baseurl}}{{post.url }}"><img class="card-img-top" src="{{site.baseurl}}/uploads/cover.jpg" alt="..." /></a>
-			<div class="card-body">
-				<div class="small text-muted">{{ post.date | date_to_string }}</div>
-				<h2 class="card-title h4">{{post.title}}</h2>
-				<p class="card-text">{% include short/t_post_summary.html %}</p>
-				<a class="btn btn-primary" href="{{site.baseurl}}{{ post.url }}">Read more →</a>
-			</div>
-			<!--span class='post-tags'>[
-			  {% for tag in post.tags %}
-				{% capture tag_name %}{{ tag }}{% endcapture %}
-				<a href="{{site.baseurl}}/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
-			  {% endfor %}
-			]</span-->
+	<div class="card mb-4">
+		<a href="{{site.baseurl}}{{post.url }}"><img class="card-img-top" src="{{site.baseurl}}/uploads/cover.jpg" alt="..." /></a>
+		<div class="card-body">
+			<div class="small text-muted">{{ post.date | date_to_string }}</div>
+			<h2 class="card-title h4">{{post.title}}</h2>
+			<p class="card-text">{% include short/t_post_summary.html %}</p>
+			<a class="btn btn-primary" href="{{site.baseurl}}{{ post.url }}">Read more →</a>
 		</div>
-		{% endfor %}
+		<!--span class='post-tags'>[
+		  {% for tag in post.tags %}
+			{% capture tag_name %}{{ tag }}{% endcapture %}
+			<a href="{{site.baseurl}}/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
+		  {% endfor %}
+		]</span-->
 	</div>
+	</div>
+	{% endfor %}
 </div>
 
 <nav aria-label="Pagination">
