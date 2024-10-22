@@ -98,7 +98,7 @@
 							{% for tag in site_tags  %}
 								<li>
 									<a href="{{ site.baseurl }}/tag/{{ tag[0] }}">
-										{{ tag[0] }} ({{ tag[1].size }})
+										{{ tag }} ({{ site.tags[tag][1].size }})
 									</a>
 								</li>
 							{% endfor %}
