@@ -17,3 +17,7 @@ body {
 footer {
     margin-top: auto;
 }
+
+.the-article img {
+	max-width: 100%;
+}
