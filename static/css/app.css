@@ -7,7 +7,6 @@ body {
     display: flex;
     flex-direction: column;
 	font-family: "segoe ui";
-	font-size: 16px;
 }
 
 .container {
@@ -20,4 +19,8 @@ footer {
 
 .the-article img {
 	max-width: 100%;
+}
+
+.the-article {
+	font-size: 16px;
 }
