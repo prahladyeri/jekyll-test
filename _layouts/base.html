@@ -5,13 +5,15 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="author" content="Prahlad Yeri">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    {% if page.robots == 'noindex' %}
+        <meta name="robots" content="noindex">
+    {% endif %}	
 	{% if page.title == "Home" %}
 	<title>{{ site.title }} - {{ site.tagline }}</title>
 	{% else %}
 	<title>{{ page.title }}</title>
 	{% endif %}  
 	<link rel="canonical" href="{{site.url}}{{site.baseurl}}{{page.url}}" />
-	<!-- CSS -->
 	<link rel="stylesheet" href="{{site.baseurl}}/static/css/bootstrap.css">
 	<link rel="stylesheet" href="{{site.baseurl}}/static/css/app.css?v={{site.version}}">
 	<!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700"> -->
