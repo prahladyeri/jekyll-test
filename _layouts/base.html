@@ -92,7 +92,7 @@
 							{% for tag in tag_counts %}
 								<li>
 									<a href="{{ site.baseurl }}/tag/{{ tag[0] }}">
-										{{ tag[0] }} ({{ tag[1].size }})
+										{{ tag[0] }} ({{ tag[1].size | append: "" }})
 									</a>
 								</li>
 							{% endfor %}							
