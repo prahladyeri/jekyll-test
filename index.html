@@ -12,7 +12,9 @@ title: Home
 		<a href="{{site.baseurl}}{{post.url }}"><img class="card-img-top" src="{{site.baseurl}}{{post.image}}" alt="..." /></a>
 	{% else %}
 		{% assign content = post.content | markdownify %}
-		{% assign first_image = content | regex_find: '<img.+src=["\'](.*?)["\']' %}
+    {% capture first_image %}
+        {{ content | regex_find: '<img.*src=[\'"](.*?)[\'"].*>' }}
+    {% endcapture %}		
 		{% if first_image %}
 		<a href="{{site.baseurl}}{{post.url }}"><img class="card-img-top" src="{{ first_image }}" alt="..." /></a>
 		{% else %}
