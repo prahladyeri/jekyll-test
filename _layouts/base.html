@@ -88,7 +88,14 @@
 					<div class="row">
 						<div class="col-sm-6">
 							<ul class="list-unstyled mb-0">
-							{% assign tag_counts = site.tags | sort: 'last' %}
+							{% assign sorted_tags  = site.tags | keys | sort %}
+							{% for tag in sorted_tags  %}
+								<li>
+									<a href="{{ site.baseurl }}/tag/{{ tag[0] }}">
+										{{ tag[0] }} ({{ tag[1].size | append: "" }})
+									</a>
+								</li>
+							{% endfor %}
 							</ul>
 						</div>
 					</div>
