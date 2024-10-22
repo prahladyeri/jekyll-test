@@ -5,13 +5,14 @@ layout: page
 
 <div id="projects" >
 <div class='block-btn'>
-    <a class='btn fab fa-paypal' href='https://paypal.me/prahladyeri'>&nbsp;PayPal</a>
-    <a class='btn fab fa-patreon' href='https://www.patreon.com/prahladyeri'>&nbsp;Patreon</a>
+    <a class='btn btn-primary fab fa-paypal' href='https://paypal.me/prahladyeri'>&nbsp;PayPal</a>
+    <a class='btn btn-success fab fa-patreon' href='https://www.patreon.com/prahladyeri'>&nbsp;Patreon</a>
 </div>
 
 <span class="fa-spin">Loading...</span>
 </div>
 <div class='project-item d-none text-muted'>
+	<hr>
 	Project: <a href="javascript:" class='name'></a><br>
 	Description: <label class='description'></label><br>
 	Stars: <label class='stars fas fa-star'></label><br>
