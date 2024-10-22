@@ -88,19 +88,17 @@
 					<div class="row">
 						<div class="col-sm-6">
 							<ul class="list-unstyled mb-0">
-						{% capture site_tags %}
-						  {% for tag in site.tags %}
-							{{ tag[1].size | plus: 1000 }}&#x1F;{{ tag | first }}
-							{% unless forloop.last %}&#x1E;{% endunless %}
-						  {% endfor %}
+						{% capture tags %}
+						{% for tag in site.tags %}
+						{{ tag[1].size | plus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
+						{% endfor %}
 						{% endcapture %}
-						{% assign site_tags = site_tags | split: '&#x1E;' | sort | reverse %}
-							{% for tag in site_tags  %}
-								<li>
-									<a href="{{ site.baseurl }}/tag/{{ tag[0] }}">
-										{{ tag }} ({{ site.tags[tag][1].size }})
-									</a>
-								</li>
+						{% assign sortedtags = tags | split:' ' | sort %}
+							{% for tag in sortedtags reversed  %}
+							{% assign tagitems = tag | split: '#' %}
+								<li><a href="{{ site.baseurl }}/tag/{{ tagitems[1] }}">
+									{{ tagitems[1] }} ({{ tagitems[2] }})
+								</a></li>
 							{% endfor %}
 							</ul>
 						</div>
