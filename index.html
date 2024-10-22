@@ -28,22 +28,10 @@ title: Home
   {% endfor %}
 </div>
 
-<div class="pagination">
-  <ul class="nav nav-pills">
-    {% if paginator.previous_page %}
-      <li class="nav-item">
-        <a class="nav-link" href="{{ paginator.previous_page_path }}" aria-label="Previous">
-          Previous
-        </a>
-      </li>
-    {% endif %}
-    
-    {% if paginator.next_page %}
-      <li class="nav-item">
-        <a class="nav-link" href="{{ paginator.next_page_path }}" aria-label="Next">
-          Next
-        </a>
-      </li>
-    {% endif %}
-  </ul>
-</div>
+<nav aria-label="Pagination">
+<hr class="my-0">
+<ul class="pagination justify-content-center my-4">
+	<li class="page-item"><a class="nav-link" href="{{base.url}}/page{{paginator.previous_page}}" tabindex="-1" aria-disabled="true">Newer</a></li>
+	<li class="page-item"><a class="page-link" href="{{base.url}}/page{{paginator.next_page}}">Older</a></li>
+</ul>
+</nav>
